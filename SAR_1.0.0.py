@@ -13,7 +13,7 @@ plot(medium, color = color.rgb(230, 255, 2), linewidth = 2)
 plot(long, color = color.green, linewidth = 3)
 ///plot(long, color = color.yellow)
 //plot(cross(short, long) ? long : na, style = plot.style_cross, linewidth = 4, color = color.orange )
-plot(long , style = plot.style_cross, linewidth = 4, color = short > long ? #ddffb9 : #ff9898 )
+plot( ta.cross(short,medium) ? short : na , style = plot.style_cross, linewidth = 7, color = short > long ? #ddffb9 : #ff9898 )
 
 /// We Must use ta. before sma() to avoid errors in V6 !!!!!!!!!!
 MA_Value = ta.sma(close,25)
