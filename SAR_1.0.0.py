@@ -16,7 +16,7 @@ plot(long, color = color.green, linewidth = 3)
 plot( ta.cross(short,medium) ? short : na , style = plot.style_cross, linewidth = 7, color = short > long ? #ddffb9 : #ff9898 )
 
 /// We Must use ta. before sma() to avoid errors in V6 !!!!!!!!!!
-MA_Value = ta.sma(close,25)
+//MA_Value = ta.sma(close,25)
 // SAR settings
 start = input.float(0.02, title="Start", step=0.01)
 increment = input.float(0.02, title="Increment", step=0.01)
@@ -27,4 +27,4 @@ SAR_Value = ta.sar(start, increment, maximum)
 
 
 // Display SAR dots
-plot(SAR_Value, title="Parabolic SAR", style=plot.style_circles,  color= MA_Value>SAR_Value? color.green : color.red, linewidth=4)
+plot(SAR_Value, title="Parabolic SAR", style=plot.style_circles,  color= short>SAR_Value? color.green : color.red, linewidth=4)
